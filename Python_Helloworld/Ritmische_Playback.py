@@ -2,9 +2,10 @@ RhytmList = []
 
 #Import de audio sample
 import simpleaudio as sa
+from time import sleep
 
 
-wave_obj = sa.WaveObject.from_wave_file("/Users/wesbroersen 1/Documents/Samples/rhythm-lab.com_amen_vol.1/WAV/cw_amen01_175.wav", 2, 2, 44100)
+wave_obj = sa.WaveObject.from_wave_file("/Users/wesbroersen 1/Documents/Samples/rhythm-lab.com_amen_vol.1/WAV/cw_amen01_175.wav")
 
 #Define the number of playback times
 print("numPlaybackTimes:")
@@ -19,29 +20,23 @@ for x in range(0, numPlaybackTimes):
     float(Rhytm)
     RhytmList.append(Rhytm)
 
-x = len(RhytmList)
-print(x)
-
 #Define the tempo in the variable called BPM
 print("BPM:")
 BPM = input()
-float(BPM)
+#Convert BPM to floating point value
+x = int(BPM)
+#Get the BPM in Seconds to work in the delay
+BPMMs = 60 / x
+
+print(BPMMs)
 
 
 
-
-
-
-
-
-#for x in RhytmList:
-#  print(x)
-#Converteren van de String input naar float value's
-
-
-
-
+number = 0
 
 for x in range(0, numPlaybackTimes):
+
     play_obj = wave_obj.play()
     play_obj.wait_done()
+
+    sleep(RhytmList[# hier moet het getal uit the Rhytmlist komen die bepaald hoeland de sleep functie moet werken ])
